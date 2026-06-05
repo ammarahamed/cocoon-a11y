@@ -1257,7 +1257,7 @@
     var footer = el("div", {
       className: PREFIX + "-footer",
       innerHTML:
-        'Built with ❤️ by <a href="https://mycocoon.life" target="_blank" rel="noopener">Cocoon</a>',
+        'Built with ❤️ by <a href="https://ammarahamed.life" target="_blank" rel="noopener">Ammar</a>',
     });
 
     panel.appendChild(header);
