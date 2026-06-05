@@ -1257,7 +1257,7 @@
     var footer = el("div", {
       className: PREFIX + "-footer",
       innerHTML:
-        'Cocoon A11y &mdash; <a href="https://mycocoon.life" target="_blank" rel="noopener">mycocoon.life</a>',
+        'Built with ❤️ by <a href="https://mycocoon.life" target="_blank" rel="noopener">Cocoon</a>',
     });
 
     panel.appendChild(header);
