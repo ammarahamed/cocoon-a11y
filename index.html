@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocoon A11y — Demo</title>
+  <style>
+    :root {
+      --bg: #0a0a1a;
+      --surface: #12122a;
+      --border: #1e1e3a;
+      --text: #e0e0e8;
+      --text-muted: #888;
+      --accent: #1dda63;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    /* Code block */
+    .code-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 14px;
+      color: var(--accent);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      overflow-x: auto;
+      position: relative;
+    }
+    .code-block .comment { color: #555; }
+    .code-block .tag { color: #ff7b72; }
+    .code-block .attr { color: #d2a8ff; }
+    .code-block .str { color: #a5d6ff; }
+
+    /* Feature grid */
+    .features {
+      padding: 60px 0;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .feat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feat-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .feat-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .feat-card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .feat-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Content sections */
+    .content-section {
+      padding: 40px 0;
+    }
+    .content-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 16px;
+    }
+    .content-section p, .content-section li {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .content-section ul {
+      padding-left: 24px;
+    }
+    .content-section img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    /* Comparison table */
+    .comparison {
+      padding: 60px 0;
+    }
+    .comparison h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 32px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--surface);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+    td { background: var(--bg); }
+    tr:last-child td { border-bottom: none; }
+    .check { color: var(--accent); font-weight: 700; }
+    .cross { color: #666; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    /* Badges */
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .badge.green { border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-badge">Open Source</div>
+      <h1>Cocoon <span>A11y</span></h1>
+      <p>The free, open-source accessibility widget for any website. One line of code. Zero dependencies. No tracking.</p>
+      <div class="code-block">
+        <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"https://cdn.jsdelivr.net/npm/cocoon-a11y/a11y.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+      </div>
+      <div class="badges">
+        <span class="badge green">MIT License</span>
+        <span class="badge green">Zero Dependencies</span>
+        <span class="badge green">GDPR Compliant</span>
+        <span class="badge green">WCAG 2.2</span>
+        <span class="badge">~18KB</span>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features container" aria-label="Features">
+      <h2>Everything your site needs</h2>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="icon">🔊</div>
+          <h3>Read Aloud</h3>
+          <p>Text-to-speech with chunked processing, speed control, and Chrome keep-alive fix. Read the full page or just selected text.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">🌙</div>
+          <h3>Dark Mode & High Contrast</h3>
+          <p>Multiple vision modes including dark mode, light mode, high contrast, and full desaturation.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">🔴</div>
+          <h3>Color Blind Filters</h3>
+          <p>SVG-based filters for Protanopia, Deuteranopia, and Tritanopia. Accurate color simulation.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">📖</div>
+          <h3>Dyslexia Support</h3>
+          <p>OpenDyslexic font, text spacing, line height, and word spacing adjustments.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">📏</div>
+          <h3>Reading Guide</h3>
+          <p>A horizontal ruler that follows your cursor, helping you track which line you're reading.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">⌨️</div>
+          <h3>Keyboard Navigation</h3>
+          <p>Focus highlights, tab indicator, skip-to-content link, and Alt+A shortcut to open the widget.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">📑</div>
+          <h3>Page Structure</h3>
+          <p>View all headings and ARIA landmarks as a navigable list. Jump to any section instantly.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">🖱️</div>
+          <h3>Big Cursor</h3>
+          <p>Enlarged green cursor for better visibility. Plus hide images option for reduced distractions.</p>
+        </div>
+        <div class="feat-card">
+          <div class="icon">⏸️</div>
+          <h3>Stop Animations</h3>
+          <p>Instantly pause all CSS animations and transitions for users with motion sensitivity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content for testing Read Aloud and other features -->
+    <section class="content-section container" aria-label="About">
+      <h2>Why Cocoon A11y exists</h2>
+      <p>
+        Accessibility tools like UserWay charge $49/month or more, and some are entirely region-blocked. AccessiBe costs hundreds per year. Meanwhile, millions of websites have zero accessibility features.
+      </p>
+      <p>
+        Accessibility is a right, not a premium feature. Cocoon A11y is 100% free, open-source, and works on any website with a single script tag. No accounts, no tracking, no cookies, no external requests.
+      </p>
+      <h3>How it works</h3>
+      <ul>
+        <li>Add one script tag to your HTML</li>
+        <li>The widget appears in the corner of your page</li>
+        <li>Users click it to access 25+ accessibility features</li>
+        <li>Everything runs client-side — no data leaves the browser</li>
+        <li>Fully configurable via data attributes</li>
+      </ul>
+      <h3>Configuration examples</h3>
+      <p>Position the widget in the bottom-left corner with a blue accent:</p>
+      <div class="code-block">
+        <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"a11y.js"</span> <span class="attr">data-position</span>=<span class="str">"bottom-left"</span> <span class="attr">data-color</span>=<span class="str">"#3b82f6"</span><span class="tag">&gt;&lt;/script&gt;</span>
+      </div>
+      <p>Persist user preferences across page loads:</p>
+      <div class="code-block">
+        <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"a11y.js"</span> <span class="attr">data-persist</span>=<span class="str">"true"</span><span class="tag">&gt;&lt;/script&gt;</span>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison container" aria-label="Comparison">
+      <h2>How we compare</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Cocoon A11y</th>
+              <th>UserWay</th>
+              <th>AccessiBe</th>
+              <th>Sienna</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Price</td>
+              <td class="check">Free forever</td>
+              <td>$49/mo+</td>
+              <td>$490/yr+</td>
+              <td class="check">Free</td>
+            </tr>
+            <tr>
+              <td>Open Source</td>
+              <td class="check">Yes (MIT)</td>
+              <td class="cross">No</td>
+              <td class="cross">No</td>
+              <td class="cross">No</td>
+            </tr>
+            <tr>
+              <td>Zero Dependencies</td>
+              <td class="check">Yes</td>
+              <td class="cross">No</td>
+              <td class="cross">No</td>
+              <td class="check">Yes</td>
+            </tr>
+            <tr>
+              <td>Text-to-Speech</td>
+              <td class="check">Yes (chunked)</td>
+              <td class="check">Yes</td>
+              <td class="check">Yes</td>
+              <td class="cross">No</td>
+            </tr>
+            <tr>
+              <td>Color Blind Filters</td>
+              <td class="check">3 types</td>
+              <td class="check">Yes</td>
+              <td class="check">Yes</td>
+              <td class="cross">No</td>
+            </tr>
+            <tr>
+              <td>Dyslexia Font</td>
+              <td class="check">Yes</td>
+              <td class="check">Yes</td>
+              <td class="check">Yes</td>
+              <td class="cross">No</td>
+            </tr>
+            <tr>
+              <td>Reading Guide</td>
+              <td class="check">Yes</td>
+              <td class="check">Yes</td>
+              <td class="cross">No</td>
+              <td class="cross">No</td>
+            </tr>
+            <tr>
+              <td>Page Structure Nav</td>
+              <td class="check">Yes</td>
+              <td class="check">Yes</td>
+              <td class="cross">No</td>
+              <td class="cross">No</td>
+            </tr>
+            <tr>
+              <td>No Tracking</td>
+              <td class="check">Guaranteed</td>
+              <td class="cross">Tracks usage</td>
+              <td class="cross">AI tracking</td>
+              <td class="check">No cookies</td>
+            </tr>
+            <tr>
+              <td>GDPR Compliant</td>
+              <td class="check">By design</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td class="check">Yes</td>
+            </tr>
+            <tr>
+              <td>Region Blocked</td>
+              <td class="check">Never</td>
+              <td class="cross">Some regions</td>
+              <td class="cross">Some regions</td>
+              <td class="check">No</td>
+            </tr>
+            <tr>
+              <td>Widget Size</td>
+              <td>~18KB</td>
+              <td>~120KB</td>
+              <td>~200KB+</td>
+              <td>~30KB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- More content for testing -->
+    <section class="content-section container" aria-label="Browser support">
+      <h2>Browser Support</h2>
+      <p>Cocoon A11y works on all modern browsers:</p>
+      <ul>
+        <li>Chrome 80+ (including chunked speech keep-alive fix)</li>
+        <li>Firefox 78+</li>
+        <li>Safari 14+</li>
+        <li>Edge 80+</li>
+        <li>Mobile browsers (responsive panel)</li>
+      </ul>
+      <p>Features that require specific APIs (like Web Speech) gracefully degrade — the section simply hides if the browser doesn't support it.</p>
+
+      <h2>Contributing</h2>
+      <p>
+        We welcome contributions! Fork the repo, make your changes, and submit a pull request. Please follow the existing code style and add comments explaining any new features.
+      </p>
+      <p>
+        Bug reports and feature requests are welcome on the <a href="https://github.com/cocoon-labs/cocoon-a11y/issues">GitHub Issues</a> page.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with care by <a href="https://mycocoon.life">Cocoon</a> &mdash; Accessibility shouldn't be paywalled.</p>
+  </footer>
+
+  <!-- Cocoon A11y Widget — this is all you need! -->
+  <script src="a11y.js" data-position="bottom-right" data-color="#1dda63" data-persist="true"></script>
+</body>
+</html>

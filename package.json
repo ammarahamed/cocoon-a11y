@@ -1,0 +1,46 @@
+{
+  "name": "cocoon-a11y",
+  "version": "1.0.0",
+  "description": "The free, open-source accessibility widget for any website. One line of code. Zero dependencies. No tracking.",
+  "main": "a11y.js",
+  "files": [
+    "a11y.js",
+    "a11y.min.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "minify": "npx terser a11y.js -o a11y.min.js -c -m --comments '/^!/' ",
+    "serve": "npx http-server -o index.html -p 8080"
+  },
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "widget",
+    "wcag",
+    "ada",
+    "section508",
+    "screen-reader",
+    "text-to-speech",
+    "high-contrast",
+    "dark-mode",
+    "dyslexia",
+    "color-blind",
+    "focus",
+    "keyboard-navigation",
+    "open-source",
+    "no-dependencies",
+    "gdpr",
+    "privacy"
+  ],
+  "author": "Cocoon <hello@mycocoon.life> (https://mycocoon.life)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cocoon-labs/cocoon-a11y"
+  },
+  "bugs": {
+    "url": "https://github.com/cocoon-labs/cocoon-a11y/issues"
+  },
+  "homepage": "https://github.com/cocoon-labs/cocoon-a11y#readme"
+}
