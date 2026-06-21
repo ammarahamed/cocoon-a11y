@@ -1,8 +1,8 @@
 # Cocoon A11y ♿
 
-**The free, open-source accessibility widget for any website. One line of code. Zero dependencies. No tracking.**
+**The free accessibility widget for any website. One line of code. Zero dependencies. No tracking. Free for non-commercial use — just credit Cocoon.**
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-0-green.svg)](#)
 [![GDPR Compliant](https://img.shields.io/badge/GDPR-Compliant-green.svg)](#)
 [![WCAG 2.2](https://img.shields.io/badge/WCAG-2.2-green.svg)](#)
@@ -115,8 +115,8 @@ All configuration is done via `data-` attributes on the script tag:
 
 | Feature | Cocoon A11y | UserWay | AccessiBe | Sienna |
 |---------|:-----------:|:-------:|:---------:|:------:|
-| **Price** | **Free** | $49/mo+ | $490/yr+ | Free |
-| **Open Source** | **MIT** | No | No | No |
+| **Price** | **Free (non-commercial)** | $49/mo+ | $490/yr+ | Free |
+| **License** | **CC BY-NC 4.0** | No | No | No |
 | **Dependencies** | **0** | Many | Many | 0 |
 | **Text-to-Speech** | ✅ | ✅ | ✅ | ❌ |
 | **Color Blind Filters** | ✅ (3) | ✅ | ✅ | ❌ |
@@ -194,7 +194,17 @@ Please follow the existing code style and add comments for new features.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+**Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0).**
+
+You are free to use, share, and adapt this widget for **personal, educational, nonprofit, and other non-commercial purposes** — as long as you **give credit to Cocoon / Ammar Ahamed** and link back to [https://mycocoon.life](https://mycocoon.life).
+
+- ✅ Use it on your personal site, blog, or nonprofit project
+- ✅ Modify it and share your changes (with credit)
+- ❌ **No commercial use** — you may not use it on a paid product, a business/commercial website, or resell it without permission
+
+**Want to use it commercially?** Get a commercial license — email [hello@mycocoon.life](mailto:hello@mycocoon.life).
+
+See [LICENSE](LICENSE) for the full terms.
 
 ---
 
