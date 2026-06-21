@@ -113,20 +113,20 @@ All configuration is done via `data-` attributes on the script tag:
 
 ## Comparison
 
-| Feature | Cocoon A11y | UserWay | AccessiBe | Sienna |
-|---------|:-----------:|:-------:|:---------:|:------:|
-| **Price** | **Free (non-commercial)** | $49/mo+ | $490/yr+ | Free |
-| **License** | **CC BY-NC 4.0** | No | No | No |
-| **Dependencies** | **0** | Many | Many | 0 |
-| **Text-to-Speech** | ✅ | ✅ | ✅ | ❌ |
-| **Color Blind Filters** | ✅ (3) | ✅ | ✅ | ❌ |
-| **Dyslexia Font** | ✅ | ✅ | ✅ | ❌ |
-| **Reading Guide** | ✅ | ✅ | ❌ | ❌ |
-| **Page Structure** | ✅ | ✅ | ❌ | ❌ |
-| **No Tracking** | ✅ | ❌ | ❌ | ✅ |
-| **GDPR by Design** | ✅ | Partial | Partial | ✅ |
-| **No Region Blocking** | ✅ | ❌ | ❌ | ✅ |
-| **Size** | ~18KB | ~120KB | ~200KB+ | ~30KB |
+| Feature | Cocoon A11y | Other Tools |
+|---------|:-----------:|:-----------:|
+| **Price** | **Free (non-commercial)** | $49/mo–$490/yr+ |
+| **License** | **CC BY-NC 4.0** | Proprietary |
+| **Dependencies** | **0** | Usually many |
+| **Text-to-Speech** | ✅ | Sometimes |
+| **Color Blind Filters** | ✅ (3) | Sometimes |
+| **Dyslexia Font** | ✅ | Sometimes |
+| **Reading Guide** | ✅ | Rarely |
+| **Page Structure** | ✅ | Rarely |
+| **No Tracking** | ✅ | Often tracks usage |
+| **GDPR by Design** | ✅ | Partial |
+| **No Region Blocking** | ✅ | Some regions blocked |
+| **Size** | ~18KB | ~120–200KB+ |
 
 ---
 
@@ -155,7 +155,7 @@ Features requiring specific APIs (Web Speech) gracefully degrade — sections hi
 
 ## Why This Exists
 
-UserWay is blocked in Sri Lanka and other regions. AccessiBe costs hundreds per year. Most free alternatives are limited or abandoned.
+Some accessibility tools are blocked in Sri Lanka and other regions. Others cost hundreds per year. Most free alternatives are limited or abandoned.
 
 **Accessibility shouldn't be paywalled.** Every website deserves to be accessible, regardless of budget or geography.
 
