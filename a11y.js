@@ -1,21 +1,22 @@
-/*!
- * Cocoon A11y — The free accessibility widget.
+/**
+ * Cocoon A11y — The free, open-source accessibility widget.
  * One line of code. Zero dependencies. No tracking.
  *
  * @version 1.0.0
- * @license CC-BY-NC-4.0
- * @author Cocoon / Ammar Ahamed (https://mycocoon.life)
- * @see https://github.com/ammarahamed/cocoon-a11y
+ * @license MIT
+ * @author Cocoon (https://mycocoon.life)
+ * @see https://github.com/cocoon-labs/cocoon-a11y
  *
- * Copyright (c) 2026 Cocoon / Ammar Ahamed (https://mycocoon.life)
+ * Copyright (c) 2026 Cocoon
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * Licensed under Creative Commons Attribution-NonCommercial 4.0
- * (CC BY-NC 4.0). Free to use, share, and adapt for NON-COMMERCIAL
- * purposes only, and you MUST give credit to Cocoon / Ammar Ahamed
- * with a link to https://mycocoon.life.
- *
- * Commercial use requires a license: hello@mycocoon.life
- * Full terms: https://creativecommons.org/licenses/by-nc/4.0/
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
  */
 
 (function () {

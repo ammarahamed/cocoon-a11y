@@ -1,7 +1,7 @@
 {
   "name": "cocoon-a11y",
   "version": "1.0.0",
-  "description": "The free accessibility widget for any website. One line of code. Zero dependencies. No tracking. Free for non-commercial use with attribution.",
+  "description": "The free, open-source accessibility widget for any website. One line of code. Zero dependencies. No tracking.",
   "main": "a11y.js",
   "files": [
     "a11y.js",
@@ -28,13 +28,13 @@
     "color-blind",
     "focus",
     "keyboard-navigation",
-    "non-commercial",
+    "open-source",
     "no-dependencies",
     "gdpr",
     "privacy"
   ],
   "author": "Cocoon <hello@mycocoon.life> (https://mycocoon.life)",
-  "license": "CC-BY-NC-4.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/cocoon-labs/cocoon-a11y"
